@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UPC.APIBusiness.UnitTest", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DTL.Comun", "DTL.Comun\DTL.Comun.csproj", "{EB39AA64-FEFF-4F72-AAF7-579D6A0408CA}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UPC.APIBusiness.API.IS", "UPC.APIBusiness\UPC.APIBusiness.API.IS\UPC.APIBusiness.API.IS.csproj", "{4ADB5FCF-0DD2-4404-B1BA-111060897446}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{EB39AA64-FEFF-4F72-AAF7-579D6A0408CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB39AA64-FEFF-4F72-AAF7-579D6A0408CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB39AA64-FEFF-4F72-AAF7-579D6A0408CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4ADB5FCF-0DD2-4404-B1BA-111060897446}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4ADB5FCF-0DD2-4404-B1BA-111060897446}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4ADB5FCF-0DD2-4404-B1BA-111060897446}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4ADB5FCF-0DD2-4404-B1BA-111060897446}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

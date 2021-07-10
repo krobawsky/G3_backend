@@ -294,6 +294,10 @@
             LoginResponse
             </summary>
         </member>
+        <member name="P:UPC.APIBusiness.API.Model.LoginResponse.Token">
+            <summary>
+            </summary>
+        </member>
         <member name="P:UPC.APIBusiness.API.Model.LoginResponse.Usuario">
             <summary>
             usuario
@@ -443,13 +447,13 @@
             </summary>
             <param name="UserRepository"></param>
         </member>
-        <member name="M:UPC.Business.API.Controllers.UserController.ObtenerSidebar(System.Int32)">
+        <member name="M:UPC.Business.API.Controllers.UserController.ObtenerSidebar">
             <summary>
             GetListUser
             </summary>
             <returns></returns>
         </member>
-        <member name="M:UPC.Business.API.Controllers.UserController.ObtenerUserProfile(System.Int32)">
+        <member name="M:UPC.Business.API.Controllers.UserController.ObtenerUserProfile">
             <summary>
             GetListUser
             </summary>

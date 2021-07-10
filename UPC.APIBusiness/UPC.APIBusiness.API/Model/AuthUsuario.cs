@@ -35,6 +35,11 @@ namespace UPC.APIBusiness.API.Model
     public class LoginResponse
     {
         /// <summary>
+        /// </summary>
+        [JsonProperty("token")]
+        public string Token { get; set; }
+
+        /// <summary>
         /// usuario
         /// </summary>
         [JsonProperty("usuario")]

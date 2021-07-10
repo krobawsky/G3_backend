@@ -17,7 +17,7 @@ namespace UPC.E31A.APIBusiness.API.Security
         /// 
         /// </summary>
         /// <returns></returns>
-        public async Task<string> GenerateToken(string numeroDocumento, string codigoUsuario)
+        public async Task<string> GenerateToken(string idprofile, string codigoUsuario)
         {
             var client = new HttpClient();
 
@@ -46,7 +46,7 @@ namespace UPC.E31A.APIBusiness.API.Security
                     Scope = "email",
                     Parameters =
                     {
-                        { "client_numero_documento", $"{numeroDocumento}"},
+                        { "client_numero_documento", $"{idprofile}"},
                         { "client_codigo_usuario", $"{codigoUsuario}" }
                     }
                 });

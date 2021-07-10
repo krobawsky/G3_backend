@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using UPC.APIBusiness.API.Model;
+using System.Security.Claims;
+using System.Linq;
 
 namespace UPC.Business.API.Controllers
 {
@@ -36,16 +38,20 @@ namespace UPC.Business.API.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [AllowAnonymous]
+        [Authorize]
         [Produces("application/json")]
         [ProducesResponseType(200, Type = typeof(ObtenerSidebarResponse))]
         [ProducesResponseType(400, Type = typeof(CustomErrorException))]
         [ProducesResponseType(500, Type = typeof(CustomErrorException))]
-        [Route("sidebar/{idprofile}")]
-        public ActionResult ObtenerSidebar(
-            int idprofile)
+        [Route("sidebar")]
+        public ActionResult ObtenerSidebar()
         {
-            var sidebars = _UserRepository.ObtenerSidebar(idprofile);
+            var identity = User.Identity as ClaimsIdentity;
+            IEnumerable<Claim> claims = identity.Claims;
+
+            var perfilId = claims.Where(p => p.Type == "client_numero_documento").FirstOrDefault()?.Value;
+
+            var sidebars = _UserRepository.ObtenerSidebar(int.Parse(perfilId));
             var sidebarResponses = AuthMapper.Mapper.Map<List<SidebarResponseData>>(sidebars);
 
             var response = new ObtenerSidebarResponse
@@ -61,16 +67,21 @@ namespace UPC.Business.API.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [AllowAnonymous]
+        [Authorize]
         [Produces("application/json")]
         [ProducesResponseType(200, Type = typeof(ObtenerUserProfileResponse))]
         [ProducesResponseType(400, Type = typeof(CustomErrorException))]
         [ProducesResponseType(500, Type = typeof(CustomErrorException))]
-        [Route("profile/{iduser}")]
-        public ActionResult ObtenerUserProfile(
-            int iduser)
+        [Route("profile")]
+        public ActionResult ObtenerUserProfile()
         {
-            var profile = _UserRepository.ObtenerUserProfile(iduser);
+
+            var identity = User.Identity as ClaimsIdentity;
+            IEnumerable<Claim> claims = identity.Claims;
+
+            var iduser = claims.Where(p => p.Type == "client_codigo_usuario").FirstOrDefault()?.Value;
+
+            var profile = _UserRepository.ObtenerUserProfile(int.Parse(iduser));
             var userProfileResponse = AuthMapper.Mapper.Map<UserProfileResponseData>(profile);
 
             var response = new ObtenerUserProfileResponse

@@ -4,6 +4,9 @@ using Microsoft.AspNetCore.Authorization;
 using DBContext;
 using API;
 using UPC.APIBusiness.API.Model;
+using Newtonsoft.Json;
+using UPC.E31A.APIBusiness.API.Security;
+using System.Threading.Tasks;
 
 namespace UPC.APIBusiness.API.Controllers
 {
@@ -42,17 +45,27 @@ namespace UPC.APIBusiness.API.Controllers
         [ProducesResponseType(400, Type = typeof(CustomErrorException))]
         [ProducesResponseType(500, Type = typeof(CustomErrorException))]
         [Route("login")]
-        public ActionResult Login(
+        public async Task<ActionResult> Login(
             [FromBody] LoginRequest req)
         {
             var euser = _UserRepository.Login(req.Login, req.Clave);
 
             var usuarioresponsedata = AuthMapper.Mapper.Map<UsuarioResponseData>(euser);
 
+            var token = JsonConvert
+                                .DeserializeObject<AccessToken>(
+                                    await new Authentication()
+                                    .GenerateToken(usuarioresponsedata.Profile.Id.ToString(), usuarioresponsedata.Id.ToString())
+                                    ).access_token;
+
             var response = new LoginResponse
             {
+                Token = token,
                 Usuario = usuarioresponsedata
             };
+
+            Response.Headers.Add("Access-Control-Expose-Headers", "Authorization");
+            Response.Headers.Add("Authorization", "Bearer " + token);
 
             return Json(response);
         }

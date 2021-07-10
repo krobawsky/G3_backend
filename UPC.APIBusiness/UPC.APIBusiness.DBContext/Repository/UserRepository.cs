@@ -46,7 +46,6 @@ namespace DBContext
                 returnEntity.Profile = ObtenerProfilePorId(returnEntity.IdProfile);
             }
 
-
             return returnEntity;
         }
 
