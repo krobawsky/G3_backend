@@ -274,6 +274,30 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:UPC.APIBusiness.API.Controllers.ComprobanteController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:UPC.APIBusiness.API.Controllers.ComprobanteController._comproRepository">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:UPC.APIBusiness.API.Controllers.ComprobanteController.#ctor(DBContext.IComproRepository)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:UPC.APIBusiness.API.Controllers.ComprobanteController.ObtenerComproByRuc(System.String)">
+            <summary>
+            lista
+            </summary>
+        </member>
+        <member name="M:UPC.APIBusiness.API.Controllers.ComprobanteController.ObtenerComproByDate(System.String)">
+            <summary>
+            lista
+            </summary>
+        </member>
         <member name="T:UPC.APIBusiness.API.Model.LoginRequest">
             <summary>
             AuthUsuarioRequest
@@ -431,6 +455,53 @@
             <summary>
             </summary>
         </member>
+        <member name="T:UPC.APIBusiness.API.Model.Compro.ComproListResponse">
+            <summary>
+            LoginResponse
+            </summary>
+        </member>
+        <member name="P:UPC.APIBusiness.API.Model.Compro.ComproListResponse.comprobantes">
+            <summary>
+            usuario
+            </summary>
+        </member>
+        <member name="T:UPC.APIBusiness.API.Model.Compro.ComproResponseData">
+            <summary>
+            UsuarioResponseData
+            </summary>
+        </member>
+        <member name="P:UPC.APIBusiness.API.Model.Compro.ComproResponseData.razonSocialAdquiriente">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:UPC.APIBusiness.API.Model.Compro.ComproResponseData.numeroDocumentoAdquiriente">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:UPC.APIBusiness.API.Model.Compro.ComproResponseData.tipoDocumento">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:UPC.APIBusiness.API.Model.Compro.ComproResponseData.serieNumero">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:UPC.APIBusiness.API.Model.Compro.ComproResponseData.tipoMoneda">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:UPC.APIBusiness.API.Model.Compro.ComproResponseData.totalVenta">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:UPC.APIBusiness.API.Model.Compro.ComproResponseData.fechaEmision">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:UPC.APIBusiness.API.Model.Compro.ComproResponseData.rutaDocumento">
+            <summary>
+            </summary>
+        </member>
         <member name="T:UPC.Business.API.Controllers.UserController">
             <summary>
             
@@ -445,7 +516,6 @@
             <summary>
             
             </summary>
-            <param name="UserRepository"></param>
         </member>
         <member name="M:UPC.Business.API.Controllers.UserController.ObtenerSidebar">
             <summary>

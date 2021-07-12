@@ -41,7 +41,7 @@ namespace UPC.APIBusiness.API.Controllers
         [HttpPost]
         [AllowAnonymous]
         [Produces("application/json")]
-        [ProducesResponseType(201, Type = typeof(LoginResponse))]
+        [ProducesResponseType(200, Type = typeof(LoginResponse))]
         [ProducesResponseType(400, Type = typeof(CustomErrorException))]
         [ProducesResponseType(500, Type = typeof(CustomErrorException))]
         [Route("login")]

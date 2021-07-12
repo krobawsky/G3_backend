@@ -26,7 +26,6 @@ namespace UPC.Business.API.Controllers
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="UserRepository"></param>
         public UserController(IUserRepository UserRepository)
         {
             _UserRepository = UserRepository;
@@ -92,4 +91,5 @@ namespace UPC.Business.API.Controllers
             return Json(response);
         }
     }
+
 }

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using DBEntity;
 using System;
+using static UPC.APIBusiness.API.Model.Compro;
 
 namespace UPC.APIBusiness.API.Model
 {
@@ -43,6 +44,13 @@ namespace UPC.APIBusiness.API.Model
 
             CreateMap<SidebarResponseData, EntitySidebar>();
             CreateMap<EntitySidebar, SidebarResponseData>();
+
+            #endregion
+
+
+            #region compro
+            CreateMap<ComproResponseData, EntityCompro>();
+            CreateMap<EntityCompro, ComproResponseData>();
 
             #endregion
         }
